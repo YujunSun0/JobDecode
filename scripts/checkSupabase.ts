@@ -9,13 +9,16 @@ if (fs.existsSync(envLocalPath)) {
   dotenv.config();
 }
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const requireEnv = (key: string): string => {
+  const value = process.env[key];
+  if (!value) {
+    throw new Error(`환경변수 ${key} 가 설정되지 않았습니다.`);
+  }
+  return value;
+};
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase 환경변수가 설정되지 않았습니다.');
-  process.exit(1);
-}
+const supabaseUrl = requireEnv('NEXT_PUBLIC_SUPABASE_URL');
+const supabaseAnonKey = requireEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY');
 
 async function main() {
   const healthUrl = `${supabaseUrl.replace(/\/$/, '')}/auth/v1/health`;
