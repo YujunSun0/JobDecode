@@ -7,7 +7,7 @@ type RoadmapSectionProps = {
 
 export function RoadmapSection({ highlights, progress }: RoadmapSectionProps) {
   return (
-    <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <section className="grid gap-6 rounded-3xl border border-slate-100/80 bg-white/90 p-6 shadow-xl shadow-blue-900/5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
           <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -21,7 +21,7 @@ export function RoadmapSection({ highlights, progress }: RoadmapSectionProps) {
           {highlights.map((item) => (
             <article
               key={item.label}
-              className="flex flex-col gap-1 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+              className="flex flex-col gap-1 rounded-2xl border border-slate-100 bg-gradient-to-br from-white to-slate-50/70 p-4 ring-1 ring-slate-100 shadow-sm"
             >
               <p className="text-xs font-semibold text-slate-500">{item.label}</p>
               <p className="text-lg font-semibold text-slate-900">{item.value}</p>
@@ -30,15 +30,15 @@ export function RoadmapSection({ highlights, progress }: RoadmapSectionProps) {
           ))}
         </div>
         <div className="mt-2 flex flex-wrap gap-3">
-          <button className="rounded-xl bg-gradient-to-r from-[#246BFD] to-[#7B4DFF] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/20">
+          <button className="rounded-xl bg-gradient-to-r from-[#246BFD] to-[#7B4DFF] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/20 transition hover:translate-y-[-1px] hover:shadow-xl">
             맞춤 로드맵 생성하기
           </button>
-          <button className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800">
+          <button className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-400">
             데모 로드맵 보기
           </button>
         </div>
       </div>
-      <aside className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-100">
+      <aside className="rounded-3xl border border-slate-100 bg-white/90 p-6 shadow-xl ring-1 ring-slate-100">
         <p className="text-sm font-semibold text-slate-700">진행 현황</p>
         <div className="mt-4 space-y-4">
           {progress.map((item) => (

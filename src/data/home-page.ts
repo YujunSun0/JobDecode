@@ -47,11 +47,11 @@ export const roadmapHighlights: RoadmapHighlight[] = [
 ];
 
 export const diagnostics: DiagnosticCard[] = [
-  { title: "스킬 레벨 진단", desc: "객관식 + 시나리오 기반", icon: "🧭" },
-  { title: "코딩 테스트", desc: "단계별 자동 채점", icon: "🧪" },
+  { title: "스킬 레벨 진단", desc: "객관식 + 시나리오 기반", icon: "🎯" },
+  { title: "코딩 테스트", desc: "단계별 자동 채점", icon: "⌨️" },
   { title: "AI 코드 리뷰", desc: "LLM 리뷰 + 개선 포인트", icon: "🤖" },
-  { title: "포트폴리오 진단", desc: "취약점/스토리 보강", icon: "📄" },
-  { title: "AI 모의면접", desc: "대화형 피드백", icon: "🎙️" },
+  { title: "포트폴리오 진단", desc: "취약점/스토리 보강", icon: "🗂️" },
+  { title: "AI 모의면접", desc: "대화형 피드백", icon: "🎤" },
 ];
 
 export const communityTeasers: CommunityCard[] = [
